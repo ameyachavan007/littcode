@@ -1,0 +1,36 @@
+<form [formGroup]="problemForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Problem ID</mat-label>
+      <input matInput formControlName="id">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Difficulty</mat-label>
+      <input matInput formControlName="difficulty">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Tags</mat-label>
+      <input matInput formControlName="tags">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Date Added</mat-label>
+      <!-- <input matInput [matDatepicker]="picker" formControlName="dateAdded"> -->
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+      <!-- <mat-datepicker #picker></mat-datepicker> -->
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="problemForm.invalid">Add Problem</button>
+  </form>
+  

@@ -1,0 +1,83 @@
+<div class="practice-body">
+
+
+<div class="row">
+  <ng-container *ngFor="let group of groups">
+    <mat-card class="group-card" (click)="selectCurrentGroup(group)">
+        <mat-card-header>
+          <mat-card-title>{{ group.name }}</mat-card-title>
+          <mat-card-subtitle>Participants: {{ group.participants.length }}</mat-card-subtitle>
+        </mat-card-header>
+      <mat-card-actions>
+        <!-- Add action buttons here if needed -->
+        <button mat-button color="primary" (click)="openAddFriendDialog(group)"><mat-icon>person_add</mat-icon></button>
+        <!-- <button mat-icon-button color="primary" (click)="editGroup(group)">
+          <mat-icon>edit</mat-icon>
+        </button> -->
+        <button mat-icon-button color="warn" (click)="deleteGroup(group)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </ng-container>
+
+  <!-- Plus button to add new teams -->
+  <mat-card class="group-card">
+    <mat-card-content>
+      <input [(ngModel)]="groupName" type="text" placeholder="New Group Name...">
+    </mat-card-content>
+    <mat-card-actions class="button-holder">
+      <button class="custom-button" (click)="addNewTeam()">+ Add New Team</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-container *ngIf="currentGroup && !isCurrentGroupEmpty(); else noGroupSelected">
+  <div class="prob-head">
+    <div class="problem-header">
+      <h4 >Problems</h4>
+    </div>
+    <div class="prob-head-btn">
+      <button class="custom-button" (click)="addNewQuestion()">+ Add new question</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table *ngIf="!isCurrentGroupEmpty()">
+      <thead>
+        <tr>
+          <th class="question-title">Title</th>
+          <th>Difficulty</th>
+          <th *ngFor="let participants of currentGroup.participants">{{ participants.name }}</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let question of currentQuestions">
+          <td class="question-title"> {{ question.title }} </td>
+          <td class="diff-cell" [ngStyle]="getDifficultyCellStyle(question.difficulty)"> {{  question.difficulty }} </td>
+          <td *ngFor="let solvedStatus of question.solvedStatus">
+            <mat-checkbox
+            [checked]="solvedStatus.status" 
+            (change)="onCheckboxClicked(question, solvedStatus.pid)"
+            >
+            </mat-checkbox>
+          </td>
+          <td><button mat-icon-button color="primary" *ngIf="currentQuestions.length > 0" (click)="editQuestion(question)">
+            <mat-icon>edit</mat-icon>
+          </button></td>
+          <td><button mat-icon-button color="warn" (click)="deleteQuestion(question)" *ngIf="currentQuestions.length > 0">
+            <mat-icon>delete</mat-icon>
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+<ng-template #noGroupSelected>
+  <p class="no-group-selected">No group selected. Please select/add a group to view details. To select a group please click on its card</p>
+</ng-template>
+
+</div>

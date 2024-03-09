@@ -37,6 +37,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -97,10 +98,28 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.less"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "littcode:build:production",
+              "serveTarget": "littcode:serve:production"
+            },
+            "development": {
+              "buildTarget": "littcode:build:development",
+              "serveTarget": "littcode:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -1,0 +1,23 @@
+<div class="card-container">
+    <mat-card class="problem-cards" *ngFor="let problem of problemsOfTheDay" [ngClass]="difficultyClasses[problem.difficulty]">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ problem.title }}</mat-card-title>
+          <mat-card-subtitle>Difficulty: {{ problem.difficulty }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <button mat-icon-button *ngIf="problem.linkToLeetcode" (click)="openProblemInLeetCode(problem.linkToLeetcode)">
+          <mat-icon style="color: black;">launch</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ problem.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div *ngIf="problem.tags.length > 0">
+          <mat-chip-set>
+            <mat-chip *ngFor="let tag of problem.tags" class="problem-chip">{{ tag }}</mat-chip>
+          </mat-chip-set>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>

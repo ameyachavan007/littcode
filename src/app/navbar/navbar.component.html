@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <div class="nav-main">
+        <div routerLink="/">
+            <span><span class="logo">🔥</span>{{ title }}</span>
+        </div>
+        <div class="menu">
+            <!-- <a mat-button routerLink="/admin" routerLinkActive="active">Admin</a> -->
+            <a mat-button routerLink="/practice" routerLinkActive="active">Practice</a>
+            <a mat-button routerLink="/problems" routerLinkActive="active">Problems</a>
+            <button mat-button class="sign-in-button" *ngIf="!isSignedIn" (click)="openSignInDialog()">Sign In</button>
+            <button mat-button class="sign-out-button" *ngIf="isSignedIn" (click)="signOut()">Sign Out</button>
+        </div>
+    </div>   
+</mat-toolbar>

@@ -1,0 +1,25 @@
+<h2 mat-dialog-title style="text-align: center;">➕ Add a Question</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+    <mat-label>Enter Question Title</mat-label>
+    <input matInput [(ngModel)]="title" placeholder="Enter title...">
+    <mat-label>Select Question Difficulty</mat-label>
+    <!-- <input matInput [(ngModel)]="difficulty" placeholder="Easy | Medium | Hard..."> -->
+    <mat-chip-listbox #chipList class="chip-list">
+        <mat-chip-option 
+            *ngFor="let difficulty of ['Easy', 'Medium', 'Hard']" 
+            (click)="selectDifficulty(difficulty)"
+        >
+            {{ difficulty }}
+        </mat-chip-option>
+    </mat-chip-listbox>
+    
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-main">
+    <div class="add-buttons">
+        <button mat-button class="add-btn" (click)="addQuestion()" >Add Question</button>
+    </div>
+    <div class="cancel-button-container">
+        <button mat-button mat-dialog-close  class="cancel">Cancel</button>
+    </div>
+</mat-dialog-actions>

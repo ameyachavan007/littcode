@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "newsletter-7b035": {
+      "hosting": {
+        "littcode": [
+          "newsletter-7b035"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "newsletter-7b035"
+  }
+}

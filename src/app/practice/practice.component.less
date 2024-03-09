@@ -1,0 +1,133 @@
+.group-card {
+  flex: 0 0 auto; 
+  margin: 1rem;
+  border: 2px solid black;
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.group-card:hover {
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.group-card input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #090909;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.group-card input:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.row {
+  display: flex;
+  overflow-x: auto; 
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 2px solid #bbbbbb;
+  background-color: #ffffff;
+}
+
+th {
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.diff-cell {
+  font-weight: 500;
+}
+
+.question-title {
+  text-align: left;
+}
+
+.custom-button {
+ border: 2px solid black;
+ background-color: #92f9bf;
+ padding: 0.5rem;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+.button-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.mat-icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mat-icon {
+  font-size: 18px;
+}
+
+.no-group-selected {
+  text-align: center;
+  font-weight: 500; 
+  color: rgb(41, 41, 41);
+  margin: 5rem;
+}
+
+.prob-head{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.problem-header{
+  margin-left: 5%;
+
+  
+}
+
+.problem-header h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.prob-head-btn{
+  margin-right: 5%;
+}
+
+.practice-body {
+  background-color: #f6fdff;
+  height: 100vh;
+}

@@ -1,0 +1,33 @@
+.logo {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7));
+}
+
+.nav-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    margin-right: 5px;
+    margin-left: 5px;
+    &:hover {
+        border: 2px solid #A7C7E7;
+        background-color:  #d6eaf8;
+    }
+}
+
+.sign-in-button {
+    border: 2px solid #82e0aa ;
+    color: #82e0aa;
+
+    &:hover {
+        background-color: #eafaf1;
+    }
+}

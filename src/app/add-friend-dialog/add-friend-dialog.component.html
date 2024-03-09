@@ -1,0 +1,15 @@
+<h2 mat-dialog-title style="text-align: center;">Add a Friend</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+    <mat-label>Enter Friend's Code</mat-label>
+    <input matInput [(ngModel)]="friendCode" placeholder="Friend's Code">
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-main">
+    <div class="add-buttons">
+        <button mat-raised-button class="add-btn" (click)="copyMyCode()">Copy My Code</button>
+        <button mat-raised-button class="add-btn" (click)="addFriendToMyTeam()" >Add Friend to Team</button>
+    </div>
+    <div class="cancel-button-container">
+        <button mat-button mat-dialog-close  class="cancel">Cancel</button>
+    </div>
+</mat-dialog-actions>

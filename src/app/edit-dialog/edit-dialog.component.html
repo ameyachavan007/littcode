@@ -1,0 +1,46 @@
+<h2 mat-dialog-title style="text-align: center;" *ngIf="fromWhat === 'question'">✏️ Edit Question</h2>
+<h2 mat-dialog-title style="text-align: center;" *ngIf="fromWhat === 'group'">✏️ Edit Group</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+    <div class="title" *ngIf="fromWhat === 'question'">
+        <mat-label>Question Title</mat-label>
+        <input matInput placeholder="Question Title" [(ngModel)]="question.title">
+    </div>
+    <div class="title" *ngIf="fromWhat === 'group'">
+        <mat-label>Group Name</mat-label>
+        <input matInput placeholder="Group Name" [(ngModel)]="group.name">
+    </div>
+    <div class="diff" *ngIf="fromWhat === 'question'">
+        <mat-label>Difficulty</mat-label>
+        <mat-chip-listbox #chipList class="chip-list">
+            <mat-chip-option 
+                *ngFor="let difficulty of ['Easy', 'Medium', 'Hard']" 
+                (click)="selectDifficulty(difficulty)"
+                [selected]="question.difficulty === difficulty"
+                color="accent"
+            >
+                {{ difficulty }}
+            </mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+    <div class="members" *ngIf="fromWhat === 'group'">
+        <mat-label>Current Members</mat-label>
+        <!-- create a list of checkboxes indicating which partipant is in the group -->
+        <div class="checkbox-list" *ngFor="let participant of group.participants">
+            <!-- <mat-label> {{ participant.name }} </mat-label> -->
+            <mat-checkbox [(ngModel)]="participant.selected">{{ participant.name }}</mat-checkbox>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="action-container">
+    <div class="cancel-button-container">
+        <button mat-button mat-dialog-close class="cancel">Cancel</button>
+    </div>
+    <div class="save-btn">
+        <button mat-button (click)="saveEdit()">Save</button>
+    </div>
+  </div>
+</mat-dialog-actions>
