@@ -38,6 +38,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HomrComponent } from './homr/homr.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EditDialogComponent,
     AdminComponent,
     NotFoundComponent,
+    HomrComponent,
   ],
   imports: [
     BrowserModule,
