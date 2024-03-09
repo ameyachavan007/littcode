@@ -9,15 +9,9 @@ import { HomrComponent } from './homr/homr.component';
 
 const routes: Routes = [
   {path: '', component:HomrComponent},
-  {path: 'practice', component:PracticeComponent,
-  //  canActivate:[AuthGuard] uncomment to activate authentication
-  },
-  {path: 'problems', component: ProblemsComponent, 
-  // canActivate:[AuthGuard] uncomment to activate authentication
-  },
-  {path: 'admin', component: AdminComponent, 
-  // canActivate: [AuthGuard] uncomment to activate authentication
-  },
+  {path: 'practice', component:PracticeComponent, canActivate:[AuthGuard]},
+  {path: 'problems', component: ProblemsComponent, canActivate:[AuthGuard]},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent} 
 ];
 
