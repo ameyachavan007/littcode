@@ -15,16 +15,13 @@ export class AddQuestionService {
   constructor(private _auth: AngularFireAuth, private _firestore: AngularFirestore) { }
 
   getQuestionsByGroup(group: any): Promise<IQuestions[]> {
-    console.log("called")
     return new Promise((resolve, reject) => {
       if (!group || !group.id) {
         reject('Invalid group data');
       } else {
         this._firestore.collection('groups').doc(group.id).get()
           .subscribe((groupDoc: any) => {
-            console.log("-----------------------",groupDoc)
             const groupData = groupDoc.data();
-            console.log("===============", groupData);
             const questionIds = groupData.questionIds || [];
             const questions: IQuestions[] = [];
 
@@ -55,7 +52,6 @@ export class AddQuestionService {
   }
 
   addQuestionToGroup(group: any, title: string, difficulty: string): Promise<boolean> {
-    console.log(group, title, difficulty);
     return new Promise((resolve, reject) => {
       const solvedStatus: ISolvedStatus[] = [];
 
@@ -161,7 +157,6 @@ export class AddQuestionService {
 
 
   editQuestion(question:any):Promise<boolean>{
-    console.log(question)
     return new Promise<any>((resolve, reject) => {
       // Update the question details in the Firestore database
       this._firestore.collection("questions").doc(question.id).update({

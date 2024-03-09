@@ -28,7 +28,6 @@ export class AuthServiceService {
     return new Promise<void>((resolve, reject) => {
       this._auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then((result) => {
-          console.log("Signed In!!");
           const user = result.user;
           const uniqueCode = this.generateUniqueCode();
           this._firestore.collection("users").doc(user?.uid).set({

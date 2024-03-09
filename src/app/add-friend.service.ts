@@ -21,7 +21,6 @@ export class AddFriendService {
             .subscribe((docSnapShot) => {
               if (docSnapShot) {
                 const userData:any = docSnapShot.data();
-                console.log(userData);
                 const uniqueCode = userData.uniqueCode || null;
                 observer.next(uniqueCode);
                 observer.complete();
@@ -46,7 +45,6 @@ export class AddFriendService {
   }
 
   addFriend(friendCode: string, groupId: string): Observable<boolean> {
-    console.log(friendCode, groupId);
     return new Observable<boolean>(observer => {
       this._firestore.collection("users", ref => ref.where("uniqueCode", "==", friendCode))
         .get()

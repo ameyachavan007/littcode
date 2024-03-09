@@ -76,7 +76,6 @@ export class EditDialogComponent implements OnInit {
   }
 
   getDifficultyCellStyle(difficulty: string) {
-    console.log(difficulty);
     let style = {};
     switch (difficulty.toLowerCase()) {
       case 'easy':

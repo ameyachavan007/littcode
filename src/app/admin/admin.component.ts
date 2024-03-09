@@ -25,7 +25,6 @@ export class AdminComponent {
   }
 
   onSubmit() {
-    console.log(this.problemForm.value);
   }
 
 

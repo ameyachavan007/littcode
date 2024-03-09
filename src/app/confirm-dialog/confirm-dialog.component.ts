@@ -47,7 +47,6 @@ export class ConfirmDialogComponent implements OnInit{
     }
 
     else if (this.data.from === "group") {
-      console.info("group")
       this._groupService.deleteGroup(this.data.group)
       .then((success: boolean) => {
         if (success) {

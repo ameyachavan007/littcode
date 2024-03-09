@@ -24,8 +24,6 @@ export class AddFriendDialogComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-    console.log("group data",this.data.group);
     this.id = this.data.group.id;
   }
 

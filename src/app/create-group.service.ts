@@ -43,7 +43,6 @@ export class CreateGroupService {
      
       const currentQuestionIds = group.questionIds;
 
-      console.log("cuQQ", currentQuestionIds);
       
       this._firestore.collection("groups").doc(group.id).delete()
       .then(() => {
@@ -91,7 +90,6 @@ export class CreateGroupService {
       const questionIds = group.questionIds;
       const pidsToRemove = removedParticipants.map((participant: any) => participant.id);
 
-      console.log(pidsToRemove, questionIds)
 
       group.participants = group.participants.filter((participant:any) => participant.selected);
       group.participants.forEach((participant:any) => {
@@ -114,7 +112,6 @@ export class CreateGroupService {
             
             const updatedDatedStatusArray = this.removeObjectsByIds(solvedStatusArray, pidsToRemove);
 
-            console.log("------updated solved status---------", updatedDatedStatusArray);
           })
       });
 

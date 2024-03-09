@@ -34,7 +34,6 @@ export class PracticeComponent implements OnInit, OnDestroy {
   ){}
 
   ngOnInit(): void {
-    console.log(this.currentGroup);
     
     this.loadGroups();
   }
@@ -93,7 +92,6 @@ export class PracticeComponent implements OnInit, OnDestroy {
 
   loadQuestions(group: any): void {
     
-    console.log(group)
     const groupDoc = this._firestore.collection("groups").doc(group.id);
     
     // Clear previous subscriptions
@@ -132,7 +130,6 @@ export class PracticeComponent implements OnInit, OnDestroy {
                         }
                     });
                     this.currentQuestions = questions;
-                    console.log(this.currentQuestions);
                 })
                 .catch(error => {
                     console.error("Error fetching questions:", error);
@@ -154,7 +151,6 @@ openAddFriendDialog(group: any){
           const id = snapshot.id;
           const currentGroup = { id, ...groupData };
           this.currentGroup = currentGroup;
-          console.log("Updated currentGroup:", this.currentGroup);
         },
         error(err) {
           console.error("Group does not exist:", group.id);
@@ -265,7 +261,6 @@ openAddFriendDialog(group: any){
         const id = snapshot.id;
         const currentGroup = { id, ...groupData };
         this.currentGroup = currentGroup;
-        console.log("Updated currentGroup:", this.currentGroup);
         const dialogRef = this._dialog.open(EditDialogComponent, {
           width: '400px',
           data: {group: this.currentGroup, from:"group"}
