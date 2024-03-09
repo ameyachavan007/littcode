@@ -2,8 +2,11 @@
 # 🔥Littcode - Problem Solving Groups Application
 
 🔥Littcode is an Angular-based web application designed to foster group collaboration and goal achievement among users. It provides a platform where users can create groups, engage with peers, and work towards common objectives.
+## Deployment and Live Preview
 
+The 🔥Littcode - Problem Solving Groups Application is deployed using Vercel and is accessible at [https://littcode.vercel.app/](https://littcode.vercel.app/). 
 
+Feel free to explore the live preview of the application and engage with its features!
 
 ## Table of Contents
 - [Angular Basics Learned for Project Implementation](#angular-basics-learned-for-project-implementation)
